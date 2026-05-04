@@ -14,9 +14,11 @@ jobs:
 
       - name: Configuración de Terraform
         uses: hashicorp/setup-terraform@v3
-
+        with:
+          terraform_version: 1.6.6
+ 
       - name: Inicialización de Terraform
-        run: terraform init
+        run: terraform init -input=false
 
       - name: Validación de Terraform
         run: terraform validate
