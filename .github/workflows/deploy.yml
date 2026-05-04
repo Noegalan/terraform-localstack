@@ -10,9 +10,11 @@ jobs:
 
     services:
       localstack:
-        image: localstack/localstack:latest
+        image: localstack/localstack:3.0
         ports:
           - 4566:4566
+        env:
+          SERVICES: s3
 
     steps:
       - name: Checkout del repositorio
